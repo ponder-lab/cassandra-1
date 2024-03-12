@@ -37,6 +37,8 @@ if [ -z "$CLASSPATH" ]; then
     exit 1
 fi
 
+CLASSPATH="$CLASSPATH:./build/apache-cassandra-5.1-SNAPSHOT.jar"
+
 "$JAVA" -server -ea -cp "$CLASSPATH" $JVM_OPTS \
         -Dcassandra.storagedir="$cassandra_storagedir" \
         -Dlogback.configurationFile=logback-tools.xml \
